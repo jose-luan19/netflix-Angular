@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  netflix:
+    build: .
+    container_name: netflix
+    restart: always
+    ports:
+      - 4200:4200
+      - 9229:9229 # Porta de debug
+    volumes:
+      - ./:/app
+      - /app/node_modules
